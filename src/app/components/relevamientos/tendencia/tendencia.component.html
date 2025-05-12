@@ -1,0 +1,24 @@
+<div class="container-fluid" style="padding-top: 80px">
+  <!-- Resultados -->
+  <div *ngIf="response.length" class="row">
+    <div class="col-md-12">
+      <div class="table-responsive">
+        <table class="table table-striped table-hover">
+          <tbody>
+            <tr *ngFor="let item of response">
+              <td>{{ item.keyword }}</td>
+              <td>
+                <a href="{{item.url}}" target="_blank" class="btn btn-sm btn-outline-info">Ver</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cargando más productos -->
+  <div *ngIf="isLoading" class="text-center my-3">
+    <p>Cargando más productos...</p>
+  </div>
+</div>
