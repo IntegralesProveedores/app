@@ -1,0 +1,49 @@
+<!-- BANNER DE BIENVENIDA -->
+<section id="banner-1" class="d-flex align-items-center min-vh-100 bg-img-1">
+  <div class="container">
+    <div class="row">
+      <!--
+	  <div class="col-md-5 d-flex flex-column justify-content-center align-items-center d-none d-md-block">
+        <a href="catalogo" title="Catálogo">
+          <img src="assets/images/maceta-olivo-01.png" 
+			alt="Maceta Olivo" 
+			class="img-fluid img-hover-zoom" />
+        </a>
+      </div>
+      -->
+	  <div class="col-md-5 offset-md-1 d-flex flex-column justify-content-center align-items-md-start banner-content">
+		<hgroup>
+			<h1>Macetas <span>Biodegradables</span></h1>
+		</hgroup>
+		<p class="mb-4">
+		  Una solución
+		  <span>Ecológica</span>,<br>
+		  <span>Económica</span> y
+		  <span>Eficiente</span><br>
+		  para el cultivo sustentable.
+		</p>
+
+		<a href="catalogo" class="btn btn-success btn-lg">
+          Hacé tu pedido
+        </a>
+      </div>
+      
+	  <div class="col-md-2 offset-md-3 d-flex flex-column justify-content-center align-items-center d-none d-md-block">
+		<div class="row justify-content-center text-center">
+			<div class="col-6 col-md-12" *ngFor="let prod of productos">
+				<div class="mb-2">
+					<a class="card-body text-decoration-none link-dark pb-0" [routerLink]="['/producto', prod.id]">
+						<img [src]="prod.imagen" 
+							[alt]="prod.nombre" 
+							[title]="prod.nombre" 
+							class="card-img-top rounded-circle" 
+							style="width:50%"
+						/>
+					</a>
+				</div>
+			</div>
+		</div>
+	  </div>
+	</div>
+  </div>
+</section>

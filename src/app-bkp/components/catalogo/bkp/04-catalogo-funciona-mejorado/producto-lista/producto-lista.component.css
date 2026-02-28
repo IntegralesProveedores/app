@@ -1,0 +1,26 @@
+/* Quitar flechitas en inputs number */
+.no-spin::-webkit-outer-spin-button,
+.no-spin::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.no-spin {
+  -moz-appearance: textfield;
+}
+
+
+.card {
+	border: 0; 
+	transform: scale(0.8); /* 0.5 = 50% del tamaño original */
+	transform-origin: top center; /* opcional: desde dónde se escala */
+
+}
+.card-title {
+	font-weight: 300;
+	font-size: 1.7em;
+}
+.img-fixed {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}

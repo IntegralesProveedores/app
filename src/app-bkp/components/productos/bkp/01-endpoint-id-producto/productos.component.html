@@ -1,0 +1,30 @@
+<header class="text-center d-flex align-items-center min-vh-100 section">
+  <div *ngIf="product" class="container">
+    <div class="row justify-content-center align-items-center">
+
+      <div class="col-md-4 text-md-end text-sm-center pt-5 pb-5">
+        <div id="product-info">
+          <h1>{{ product.title }}</h1>
+          <p class="price fs-3 fw-bold text-primary">
+            ${{ product.price }} {{ product.currency_id }}
+          </p>
+          <a href="#" [href]="product.permalink" target="_blank" class="btn btn-success btn-lg">
+            Comprar Ahora
+            <img src="/assets/icon/mercado-libre-48.svg" width="50" />
+          </a>
+        </div>
+      </div>
+
+      <div class="col-md-5 offset-md-1">
+        <div id="product-image">
+          <img [src]="product.pictures?.length > 0 ? product.pictures[0].url : product.thumbnail"
+               [alt]="product.title"
+               class="img-fluid">
+        </div>
+      </div>
+    </div>
+    <ng-template #errorTemplate>
+      <p *ngIf="error" class="text-danger text-center mt-3">{{ error }}</p>
+    </ng-template>
+  </div>
+</header>

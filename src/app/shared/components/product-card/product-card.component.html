@@ -1,0 +1,43 @@
+<article class="product-card" [routerLink]="['/productos', product.slug]">
+
+  <!-- IMAGE -->
+  <div class="card-image">
+    <img
+      *ngIf="mainImage"
+      [src]="mainImage"
+      [alt]="product.name"
+      loading="lazy" />
+    <div class="card-image-placeholder" *ngIf="!mainImage">
+      <span>{{ product.name[0] }}</span>
+    </div>
+
+    <span class="card-badge out-of-stock" *ngIf="!inStock">Sin stock</span>
+    <span class="card-badge in-stock" *ngIf="inStock && variant">
+      {{ variant!.units_per_pack }}u/pack
+    </span>
+  </div>
+
+  <!-- BODY -->
+  <div class="card-body">
+    <div class="card-meta">
+      <span class="card-sku" *ngIf="variant">{{ variant!.sku }}</span>
+    </div>
+
+    <h3 class="card-name">{{ product.name }}</h3>
+    <p class="card-description">{{ product.description }}</p>
+
+    <div class="card-footer">
+      <span class="card-price">{{ price | currencyArs }}</span>
+
+      <button
+        class="card-btn"
+        [class.added]="added"
+        [disabled]="!inStock"
+        (click)="addToCart($event)">
+        <span class="btn-text-default">+ Carrito</span>
+        <span class="btn-text-added">✓ Agregado</span>
+      </button>
+    </div>
+  </div>
+
+</article>

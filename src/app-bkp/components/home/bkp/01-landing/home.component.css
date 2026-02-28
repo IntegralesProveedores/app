@@ -1,0 +1,117 @@
+/* Chrome, Safari, Edge, Opera */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input.form-control {
+  background-color: white !important;
+  color: #212529 !important;
+  border: 1px solid #CCC !important;
+}
+
+
+.bg-img-1 {
+	background:  linear-gradient(to bottom, #000, #0000), url('/assets/images/img-19.jpg') no-repeat center / cover;
+	background-repeat: no-repeat;
+	background-position: left bottom;
+}
+
+.bg-img-2 {
+	background: linear-gradient(to bottom, #fff, #fff0), url('/assets/images/img-06.jpg');
+	background-repeat: no-repeat;
+	background-position: right bottom;	
+	background-size: 20% auto;
+}
+
+.bg-img-3 {
+	background: linear-gradient(
+		to top,
+		#f8f9fa 0%,        /* fondo, parte inferior */
+		#ffffff00 20%,     /* transparente en el medio */
+		#ffffff 100%       /* blanco en la parte superior */  
+	),
+	url('/assets/images/img-06-01.jpg') no-repeat center / cover;
+	background-position: left top;
+}
+
+.bg-gradient-footer {
+    background-image: linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25));
+    background-size: auto;
+    background-color: #e37b7c;
+}
+.bg-gradient-footer a {
+    font-size: 8em;
+}
+
+.banner-content h1 {
+	    font-size: 5em;
+}
+
+.banner-content p {
+	    font-size: 2em;
+}
+
+.nosotros-list {
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.nosotros-list li {
+  position: relative;
+  padding-left: 2rem;
+  line-height: 1.6;
+  background: #fff;
+  border-radius: 0.75rem;
+  padding: 1rem 1.5rem 1rem 3rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.nosotros-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.25rem;
+  color: green;
+}
+
+.icono-detalle {
+  font-size: 3.5rem;
+  line-height: 1;
+}
+
+
+
+@media (max-width: 768px) {
+	
+	.bg-img-2 {
+		background-size: 40% auto;
+	}
+	
+	.banner-content {
+		text-align: center;
+	}  
+		.banner-content h1 {
+			font-size: 2.5em;
+			margin-bottom: 30px;
+		}
+		.banner-content p {
+			font-size: 1.7em;
+		}  
+	
+	.icono-detalle {
+		font-size: 4rem;
+	}
+	
+
+}

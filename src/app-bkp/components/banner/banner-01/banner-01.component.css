@@ -1,0 +1,89 @@
+/* Tamaño y fondo del banner */
+.banner {
+  width: 1080px;
+  height: 1080px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #000;
+}
+
+.bg-img-1 {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,   /* negro con opacidad al inicio */
+    rgba(0, 0, 0, 0.5) 25%, /* transición más gradual */
+    rgba(0, 0, 0, 0.2) 50%, 
+    rgba(0, 0, 0, 0) 80%    /* se disuelve arriba */
+  ),
+  url('/assets/images/img-00.jpg') no-repeat center / cover;
+}
+
+/* Escalado proporcional del contenido */
+.banner-inner-scaled {
+  transform: scale(1.5);
+  transform-origin: center center;
+}
+
+/* Imagen */
+.banner-img {
+  width: 200px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Textos */
+.banner-content {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+  color: #FFF;
+}
+
+.titulo-macetas {
+  font-weight: 500;
+  margin: 0 0 20px;
+  text-align: center;
+  color: #FFF;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+  font-family: 'Poppins', serif;
+  font-size: 0.8em;
+  
+
+}
+
+.titulo-biodegradables {
+  font-size: 4.5em;
+  font-weight: 700;
+  color: #FFB300;
+  text-shadow: 
+    -1px -1px 2px #3E2723,
+    0 0 6px rgba(255,180,0,0.6);
+line-height: 0.8;
+	z-index: 9999;
+  
+
+}
+
+.content-texto p {
+  font-weight: 500;
+  color: #FFF;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+   font-family: 'Caveat', cursive;
+  font-size: 1.5em;
+
+}
+
+.content-texto p span {
+  color: #1b3d1b;
+  padding: 0.05em 0.15em;
+  border-radius: 1em 2em 1em 2em;
+  font-weight: 600;
+  line-height: 1;
+  font-size: 1.2em;
+  text-shadow: none;
+  background: radial-gradient(circle at center, #bfe6ba 0%, #a8d5a2 100%);
+}
+.content-texto a {
+	font-family: 'Oswald';
+
+}

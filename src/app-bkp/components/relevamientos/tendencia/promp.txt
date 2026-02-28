@@ -1,0 +1,39 @@
+primero, no hagas nada, solo leé. Te voy a pasar el codigo de 3 archivos. Tenes que usar ese codigo y solo modificar lo que esta mal o agregar lo que necesito. 
+
+No hagas nada, actualmente mi codigo esta así
+
+mas-vendidos.component.ts
+
+
+
+mas-vendidos.component.html
+
+
+
+index.js
+
+
+
+
+MODIFICACIONES
+
+1) 
+
+<div class="row justify-content-center">
+<div class="col-md-6">
+  <div class="input-group mb-3">
+	<input [(ngModel)]="query" type="text" class="form-control" placeholder="Buscar producto..." aria-label="Producto" (keyup.enter)="buscarProductos()">
+	<button (click)="buscarProductos()" class="btn btn-outline-dark" type="button">Buscar</button>
+  </div>
+</div>
+</div>
+
+necesito pasar la variable categoria a mi endpoint y en tendencia.component.html reemplazar el input por un desplegable con las categorias del endpont de mercado libre que llame al listado de categorias de mercado libre y que en el change del desplegable pasarle a mi endpoin la variable categoría.
+ejemplo const url = `https://divine-flower-c769.integralesproveedores.workers.dev/relevamientos/tendencia?q=${this.category}mas
+
+
+
+
+
+
+

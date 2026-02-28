@@ -1,0 +1,80 @@
+/* ===================================================
+   INTEGRALES — GLOBAL DESIGN SYSTEM
+   =================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+
+/* TOKENS */
+:root {
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body:    'DM Sans', sans-serif;
+  --font-mono:    'DM Mono', 'Courier New', monospace;
+
+  --color-bg:          #F7F5F0;
+  --color-surface:     #EDEAE3;
+  --color-border:      #D8D4CB;
+  --color-text:        #1A1814;
+  --color-text-muted:  #7A7469;
+  --color-accent:      #2D5A1B;
+  --color-accent-soft: rgba(45, 90, 27, 0.08);
+  --color-success:     #1E6B3A;
+
+  --radius: 2px;
+  --transition: 0.2s ease;
+}
+
+/* RESET */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--color-surface); }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-text-muted); }
+
+/* SELECTION */
+::selection {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+
+/* FOCUS */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}

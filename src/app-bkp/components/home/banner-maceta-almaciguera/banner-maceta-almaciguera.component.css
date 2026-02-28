@@ -1,0 +1,65 @@
+
+.banner-maceta-almaciguera {	
+	background: #648d2d;
+	background: linear-gradient(
+		to top,
+		#ffffff 20%,        /* Inferior */
+		#ffffff00 50%,     /* Centro transparente */
+		#ffffff 90%       /* Superior */  
+	),
+	url('/assets/images/producto-maceta-biodegradable-amaciguera-03.jpg') no-repeat center / cover;
+	background-position: center center;
+}
+
+.banner-maceta-almaciguera a  {
+  text-decoration: none;
+}
+
+.banner-maceta-almaciguera h2  {
+  color: #000;
+  font-weight: 900;
+  font-size: 4em;  
+  text-shadow: 2px 2px 5px rgba(255, 255, 255, 1); /* Sombra sutil opcional */
+  color: #000;            /* Contraste claro */
+
+  font-weight: 600;
+  color: #2d5e26;
+  color: #1b3d1b;
+  padding: 0;
+  border-radius: 1em 2em 1em 2em;
+  text-shadow: none;
+  background: radial-gradient(circle at center, #bfe6ba 0%, #a8d5a2 100%);
+}
+
+.window-mask {
+  width: 400px;
+  aspect-ratio: 1 / 1; /* Cambialo según la proporción del SVG */
+  background: #FFF url('/assets/images/producto-maceta-biodegradable-amaciguera-04.jpg') no-repeat center / cover;
+
+  /* Máscara con forma de hoja */
+  -webkit-mask-image: url('/assets/images/shape-3.svg');
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center;
+
+  mask-image: url('/assets/images/shape-3.svg');
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+
+  border: none;
+}
+
+
+
+@media (max-width: 768px) 
+{
+.window-mask {
+  width: 300px;
+
+}
+.banner-maceta-almaciguera h2  {
+  font-size: 2em;
+  text-align: center;
+}
+}

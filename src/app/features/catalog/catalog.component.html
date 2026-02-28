@@ -1,0 +1,51 @@
+<section class="catalog-page">
+
+  <!-- HEADER -->
+  <div class="catalog-header">
+    <span class="catalog-label">Colección</span>
+    <h1 class="catalog-title">Macetas<br><em>Biodegradables</em></h1>
+    <p class="catalog-subtitle">
+      Soluciones sustentables para viveros, floricultura y producción agrícola.
+    </p>
+  </div>
+
+  <!-- FILTROS -->
+  <div class="catalog-filters" *ngIf="!loading() && categories().length > 0">
+    <button
+      class="filter-btn"
+      [class.active]="activeFilter() === 'todos'"
+      (click)="setFilter('todos')">
+      Todos
+    </button>
+    <button
+      class="filter-btn"
+      *ngFor="let cat of categories()"
+      [class.active]="activeFilter() === cat.slug"
+      (click)="setFilter(cat.slug)">
+      {{ cat.name }}
+    </button>
+  </div>
+
+  <!-- LOADING -->
+  <div class="catalog-loading" *ngIf="loading()">
+    <app-loading-spinner />
+  </div>
+
+  <!-- ERROR -->
+  <div class="catalog-error" *ngIf="error()">
+    <p>{{ error() }}</p>
+    <button (click)="ngOnInit()">Reintentar</button>
+  </div>
+
+  <!-- GRID -->
+  <div class="catalog-grid" *ngIf="!loading() && !error()">
+    <app-product-card
+      *ngFor="let product of filtered(); trackBy: trackById"
+      [product]="product" />
+
+    <div class="catalog-empty" *ngIf="filtered().length === 0">
+      <p>No hay productos en esta categoría.</p>
+    </div>
+  </div>
+
+</section>
