@@ -1,9 +1,0 @@
-{
-  "routes": [
-    "/carrito",
-    "/checkout",
-    "/orden/error",
-    "/orden/exito",
-    "/productos"
-  ]
-}
