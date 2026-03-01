@@ -82,18 +82,21 @@
 @media (max-width: 768px) 
 {
 
-.numero-circulo {
-  border: 1px solid black;
-}
+	.numero-circulo {
+	  border: 1px solid black;
+	}
 
-.img-maceta {
-	width: 200px !important;
-}
+	.img-maceta {
+		min-width: 200px !important;
+	}
 
 	.ventaja {
 		padding-left: 0;
 		padding-right: 0;
+		font-size: 0.9em !important;
 		background-size: 20px auto, 40px auto !important;
 	}
 
 }
+
+

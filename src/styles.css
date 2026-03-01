@@ -2,8 +2,6 @@
    INTEGRALES — GLOBAL DESIGN SYSTEM
    =================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
-
 /* TOKENS */
 :root {
   --font-display: 'DM Serif Display', Georgia, serif;

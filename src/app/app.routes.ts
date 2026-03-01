@@ -8,16 +8,30 @@ import { CarritoComponent } from './components/catalogo/carrito/carrito.componen
 
 
 export const routes: Routes = [
-  
-	{ path: '', component: HomeComponent },
-	{ path: 'catalogo', component: ProductoListaComponent },
-	{ path: 'producto/:id', component: ProductoDetalleComponent },
-	{ path: 'carrito', component: CarritoComponent },
-  
+// ---------------------------
+// RUTAS LEGACY (versión vieja)
+// ---------------------------
+  { 
+    path: '', 
+	component: HomeComponent 
+  },
+  { 
+    path: 'catalogo', 
+	component: ProductoListaComponent 
+  },
+  { 
+    path: 'producto/:id', 
+	component: ProductoDetalleComponent 
+  },
+  { 
+    path: 'carrito', 
+	component: CarritoComponent
+  },
   
 
-
-
+// ---------------------------
+// NUEVA VERSIÓN (v2)
+// ---------------------------  
   {
     path: 'productos',
     loadComponent: () =>
@@ -29,7 +43,7 @@ export const routes: Routes = [
       import('./features/product-detail/product-detail.component').then(m => m.ProductDetailComponent)
   },
   {
-    path: 'carrito',
+    path: 'carrito-v2',
     loadComponent: () =>
       import('./features/cart/cart.component').then(m => m.CartComponent)
   },

@@ -1,6 +1,6 @@
 <section class="d-flex min-vh-100 detalle">
   <div class="container mt-4" *ngIf="producto">
-    <!-- Carrito -->
+    <!--NAV ICON CARRITO -->
     <div class="d-flex justify-content-end position-relative">
       <nav class="position-absolute top-0 end-0 mt-3 me-3 z-3">
         <a routerLink="/carrito" class="position-relative link-dark">
@@ -14,24 +14,28 @@
 
     <!-- Contenido principal -->
     <div class="row">
-      <!-- Imagen producto -->
+      <!-- IMAGEN PRODUCTO -->
       <div class="col-md-3 offset-md-1 text-center">
-        <img [src]="producto.imagen" [alt]="producto.nombre" class="img-fluid rounded-circle img-fixed" style="width:200px" />
+        <img [src]="producto.imagen" 
+			 [alt]="producto.nombre" 
+			 class="rounded-circle img-fluid d-block mx-auto" 
+			  />
       </div>
 
-      <!-- Detalles del producto -->
       <div class="col-md-7 offset-md-1">
-        <h1>{{ producto.nombre }}</h1>
+        
+		<!-- DETALLES DEL PRODUCTO -->
+		<h1>{{ producto.nombre }}</h1>
         <p class="mb-1">{{ producto.medidas }} - {{ producto.volumenCc }} cm<sup>3</sup></p>
         <p class="mb-1">{{ producto.presentacion }}</p>
-
         <!--
 		<p class="mb-1 precio">
           {{ fmtUSD(producto.precioUsd) }} | {{ fmtARS(producto.precioUsd * dolarVenta) }}
         </p>
 		-->
-        <!-- Botones y cantidad -->
-        <div class="d-flex align-items-center gap-3 mb-0">
+        
+		<!-- BOTONES Y CANTIDAD -->
+        <div class="d-flex align-items-center gap-3 mb-5">
           <div class="custom-qty-group d-flex align-items-center">
             <button class="btn qty-btn" type="button" (click)="decrementar()">
               <i class="fas fa-minus"></i>
@@ -45,9 +49,8 @@
             Catálogo
           </a>		
 		</div>
-		<p class="stock">Stock disponible</p>
 
-        <!-- Lista de beneficios -->
+        <!-- LISTA DE BENEFICIOS -->
         <div>
           <ul class="list-unstyled">
             <li class="d-flex"><i class="bi bi-flower3 me-3 text-success"></i><span>Producto orgánico 100% biodegradables.</span></li>

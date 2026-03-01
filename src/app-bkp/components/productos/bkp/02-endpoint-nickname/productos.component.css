@@ -1,6 +1,0 @@
-.card-img-top {
-  width: 100%;
-  height: 200px; /* Altura fija para uniformidad */
-  object-fit: cover; /* Mantiene la proporción y recorta el exceso */
-  border-radius: 0.5rem; /* Bordes redondeados opcionales */
-}
