@@ -1,0 +1,91 @@
+<section class="d-flex min-vh-100 bg-img-2">
+  <div class="container">
+    <div class="row justify-content-center text-start mt-4 mb-4">
+      <div class="col-md-9">
+        <h2>Carrito de Compras</h2>
+      </div>
+      <div class="col-md-2 text-end">
+        <a routerLink="/catalogo" class="btn btn-outline-dark">Volver al Catálogo</a>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-md-11">
+
+        <div *ngIf="carrito.length === 0" class="alert alert-info">
+          No hay productos en el carrito.
+        </div>
+
+        <table *ngIf="carrito.length > 0" class="table table-bordered mt-3 align-middle">
+          <!-- 
+		  <thead>
+            <tr>
+              <th class="text-center">Imagen</th>
+              <th>Producto</th>
+              <th class="text-end">Precio USD</th>
+              <th class="text-end">Precio ARS</th>
+              <th class="text-center">Cantidad (packs)</th>
+              <th class="text-end">Volumen Total</th>
+              <th class="text-center">
+                <button class="btn btn-link p-0" (click)="vaciarCarrito()" title="Vaciar carrito">
+                  <i class="fa fa-trash"></i>
+                </button>
+              </th>
+            </tr>
+          </thead>
+		  -->
+
+          <tbody>
+            <tr *ngFor="let prod of carrito">
+              <!-- Imagen clickeable: muestra medidas -->
+              <td class="text-center">
+                <img [src]="prod.imagen" [alt]="prod.nombre"
+                     class="rounded-circle img-thumb"
+                     (click)="toggleInfo(prod)" style="cursor:pointer;">
+                <div *ngIf="expandedId === prod.id" class="small text-muted mt-2">
+                  {{ prod.medidas }}
+                </div>
+              </td>
+
+              <td>{{ prod.nombre }}</td>
+
+              <td class="text-end">{{ fmtUSD(prod.precioUsd) }}</td>
+              <td class="text-end">{{ fmtARS(prod.precioUsd * dolarVenta) }}</td>
+
+              <td class="text-center">
+                <div class="input-group justify-content-center" style="max-width: 180px; margin: 0 auto;">
+                  <button class="btn btn-outline-secondary" type="button" (click)="decrementar(prod)">-</button>
+                  <input type="number" class="form-control text-center no-spin"
+                         [(ngModel)]="prod.cantidad" (input)="onCantidadInput(prod)" min="0">
+                  <button class="btn btn-outline-secondary" type="button" (click)="incrementar(prod)">+</button>
+                </div>
+              </td>
+
+              <td class="text-end">
+				{{ fmtNumber((prod.volumenCc || 0) * (prod.unidadesPorPack || 0) * (prod.cantidad || 0)) }} cc
+
+              </td>
+
+              <td class="text-center">
+                <button class="btn btn-link p-0 text-danger" (click)="eliminarProducto(prod.id)" title="Eliminar">
+                  <i class="fa fa-times"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div *ngIf="carrito.length > 0" class="mt-3">
+          <p class="text-end mb-1"><strong>Volumen Total:</strong> {{ fmtNumber(getVolumenTotal(), 0, 0) }} cc</p>
+          <p class="text-end mb-1"><strong>Total USD:</strong> {{ fmtUSD(getTotalUSD()) }}</p>
+          <p class="text-end"><strong>Total ARS:</strong> {{ fmtARS(getTotalARS()) }}</p>
+
+          <div class="d-flex justify-content-end gap-2">
+            <button class="btn btn-success" (click)="confirmarCompra()">Confirmar Compra</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

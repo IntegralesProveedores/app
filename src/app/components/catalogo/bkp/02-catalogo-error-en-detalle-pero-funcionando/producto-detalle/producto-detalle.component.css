@@ -1,0 +1,15 @@
+.img-fixed {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+}
+
+/* Quitar flechitas */
+.no-spin::-webkit-outer-spin-button,
+.no-spin::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.no-spin {
+  -moz-appearance: textfield;
+}

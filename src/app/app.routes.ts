@@ -1,12 +1,23 @@
 import { Routes } from '@angular/router';
 import { cartNotEmptyGuard } from './core/guards/cart-not-empty.guard';
 
+import { HomeComponent } from './components/home/home.component';
+import { ProductoListaComponent } from './components/catalogo/producto-lista/producto-lista.component';
+import { ProductoDetalleComponent } from './components/catalogo/producto-detalle/producto-detalle.component';
+import { CarritoComponent } from './components/catalogo/carrito/carrito.component';
+
+
 export const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'productos',
-    pathMatch: 'full'
-  },
+  
+	{ path: '', component: HomeComponent },
+	{ path: 'catalogo', component: ProductoListaComponent },
+	{ path: 'producto/:id', component: ProductoDetalleComponent },
+	{ path: 'carrito', component: CarritoComponent },
+  
+  
+
+
+
   {
     path: 'productos',
     loadComponent: () =>
